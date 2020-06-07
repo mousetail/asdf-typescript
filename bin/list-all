@@ -1,0 +1,13 @@
+
+#!/usr/bin/env bash
+set -eu
+
+BASE_URL="https://www.googleapis.com/storage/v1/b/dart-archive/o?prefix=channels/stable/release/&delimiter=/"
+
+VERSIONS=$(curl --silent $BASE_URL \
+    | grep "channels/stable/release/[[:digit:]]*\.[[:digit:]]*\.[[:digit:]]*" \
+    | rev \
+    | cut -d "/" -f2 \
+    | rev)
+
+echo $VERSIONS
