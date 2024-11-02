@@ -63,6 +63,9 @@ install_typescript () {
     echo "$allow_extras"
     echo "$major_version"
 
+    set -e
+    mkdir -p "$install_path"
+
     if [ $major_version -lt "2" ]; then
         allow_extras=1
     fi
