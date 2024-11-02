@@ -40,11 +40,12 @@ get_arch () {
 }
 
 my_mktemp () {
-    local tempdir=$(mktemp -d asdf-typescript.XXXX)
+    local tempdir=$(mktemp -d /tmp/asdf-typescript.XXXX)
     echo -n $tempdir
 }
 
 install_typescript () {
+    set -e
     local install_type=$1
     local version=$2
     local install_path=$3
@@ -67,7 +68,6 @@ install_typescript () {
     echo "Allow Extras = $allow_extras"
     echo "Major Version = $major_version"
 
-    set -e
     mkdir -p "$install_path"
 
 
