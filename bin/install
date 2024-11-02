@@ -92,7 +92,7 @@ install_typescript () {
     fi
 
     echo "Unzipping typescript SDK to $install_path..."
-    unzip -d "$install_path" "$tempdir/sdk.zip" > /dev/null 2>&1
+    unzip -d "$install_path" "$tempdir/sdk.zip" > /dev/null
     if [ $allow_extras -eq "1" ]; then
         echo "Unzipping Content Shell to $install_path..."
         unzip -d "$install_path" "$tempdir/content_shell.zip" > /dev/null 2>&1
